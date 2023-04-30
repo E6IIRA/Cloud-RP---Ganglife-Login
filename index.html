@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>CGL | Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-wrapper">
+            <div class="logo-container">
+                <img class="logo" src="../utils/img/logos/cloud512.png" alt="">
+                <p class="name">CLOUD</p>
+                <p class="rp">GANGLIFE</p>
+            </div>
+            <div class="info-container">
+                <p class="title">REGISTRATION</p>
+                <p class="content">Logge dich ein um auf unserem Gameserver zu spielen!<br> Solltest du kein Account haben, wird ein Account für dich erstellt!</p>
+            </div>
+            <div class="input-container">
+                <p class="title">Name</p>
+                <input class="input" style="background: url('./img/user.png');" type="text" placeholder="Max_Mustermann" id="username">
+                <p class="title">Passwort</p>
+                <input class="input" style="background: url('./img/key.png');" type="password" placeholder="••••••••••••" id="password">
+                <div class="check">
+                    <input class="checkbox" type="checkbox">
+                    <p class="rules">Ich habe das Regelwerk gelesen und akzeptiere es</p>
+                </div>
+            </div>
+            <button class="register" onclick="sendRegister()">ANMELDEN</button>
+        </div>
+    </div>
+</body>
+
+<script src="./js/fas.js"></script>
+
+</html>
+<script>
+    function sendRegister() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        mp.trigger("submitRegisterToServer", username, password);
+    }
+</script>
